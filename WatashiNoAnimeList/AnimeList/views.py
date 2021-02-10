@@ -7,4 +7,7 @@ from .models import Anime
 
 def index(request):
     response = Anime.objects.all()
+    # studio = Anime.objects.filter(studio=1)
+    # studio = Anime.objects.filter(studio__isnull=True)
+    # anime = Anime.objects.filter(description__icontains="lol")
     return HttpResponse(response)
