@@ -17,9 +17,12 @@ def index(request):
 
 def studio(request, id):
     studio_user = Studio.objects.get(pk=id)
-    return HttpResponse(studio_user.name)
+    data = {"studio_user": studio_user}
+    return render(request, "studio.html", data)
 
 
 def anime(request, id):
     anime_user = Anime.objects.get(pk=id)
-    return HttpResponse(anime_user.name)
+    response = Anime.objects.all()
+    data = {"anime_user": anime_user, "animes": response}
+    return render(request, "anime.html", data)

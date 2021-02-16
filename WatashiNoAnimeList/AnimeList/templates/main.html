@@ -1,13 +1,20 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>WatashiNoAnimeList</title>-->
-<!--</head>-->
-<!--<body>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WatashiNoAnimeList</title>
+</head>
+<body>
 
-<!--</body>-->
-<!--</html>-->
+<div>
 {% for a in animes %}
-<p><a href="anime/{{a.id}}">{{a.name}}</a></p>
+<p><a href="/anime/{{a.id}}">{{a.name}}</a></p>
 {% endfor %}
+</div>
+
+<div>
+    <h>woooooooof</h>
+    {% block anime %} {% endblock anime %}
+</div>
+</body>
+</html>
