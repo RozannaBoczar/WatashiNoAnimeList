@@ -1,32 +1,29 @@
 <!doctype html>
 <html lang="en">
- {% load static %}
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Watashi No Anime List</title>
 
-
+     {% load static %}
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
     <link rel="stylesheet" href="{% static 'main.css' %}">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
-
   </head>
   <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-anime">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Watashi No Anime List</a>
+        <a class="navbar-brand" href="/">Watashi No Anime List</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-          <a class="nav-link" href="anime.html">Anime</a>
+          <a class="nav-link active" href="/">Home</a>
+          <a class="nav-link" aria-current="page" href="/anime/1">Anime</a>
           <a class="nav-link" href="#">Log in</a>
           <a class="nav-link" href="#">Sign up</a>
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contact me</a>
@@ -40,14 +37,12 @@
     <section class="main-anime">
       <h2>Welcome!</h2>
     </section>
+    <div>
+        {% block anime %} {% endblock anime %}
+    </div>
 
   </main>
-    {% block head-javascript %}
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-
-	<script src="{% static 'js/bootstrap.min.js' %}"></script>
-  {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
   </body>
 </html>

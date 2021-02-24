@@ -23,6 +23,6 @@ def studio(request, id):
 
 def anime(request, id):
     anime_user = Anime.objects.get(pk=id)
-    response = Anime.objects.all()
-    data = {"anime_user": anime_user, "animes": response}
+    # response = Anime.objects.all()
+    data = {"anime_user": anime_user}
     return render(request, "anime.html", data)

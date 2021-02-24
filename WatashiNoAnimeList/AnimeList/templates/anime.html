@@ -3,12 +3,11 @@
 {% block anime %}
 
 {% if anime_user %}
-    <h1>Anime</h1>
-    <h2>{{anime_user.name}}</h2>
-    <p><a href="/studio/{{anime_user.studio.id}}"> {{anime_user.studio}}</a></p>
+<!--    <h1>Anime</h1>-->
+<!--    <h2>{{anime_user.name}}</h2>-->
+    <p><a href="/anime/{{anime_user.id}}"> {{anime_user.name_eng}}</a></p>
 {% else %}
     <p>Wybierz anime z listy</p>
 {% endif %}
 
 {% endblock anime %}
-

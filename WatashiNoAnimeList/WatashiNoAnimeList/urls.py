@@ -20,6 +20,6 @@ from AnimeList.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", index, name='index'),
-    path('studio/<id>', studio, name="studio"),
+    # path('studio/<id>', studio, name="studio"),
     path('anime/<id>', anime, name="anime")
 ]
