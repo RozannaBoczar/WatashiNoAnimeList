@@ -26,10 +26,7 @@ class Anime(models.Model):
     source = models.CharField(blank=True, null=True, max_length=256) # add choices manga, novel, game, whatever
     genres = models.CharField(blank=True, null=True, max_length=256) # also create genres a lot of genres
     duration = models.DecimalField(blank=True, null=True, decimal_places=2, max_digits=256) # add
-    rating = models.CharField(blank=True, null=True, max_length=256) # or just type the age
-    year = models.IntegerField(blank=True, null=True)
     score = models.IntegerField(blank=True, null=True)
-    ranked = models.IntegerField(blank=True, null=True)
     image = models.ImageField(verbose_name=None, blank=True, null=True)
 
     def __str__(self):
