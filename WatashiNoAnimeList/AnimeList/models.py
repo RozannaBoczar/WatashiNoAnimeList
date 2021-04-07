@@ -5,6 +5,7 @@ import PIL
 
 # one class is a one table in the database
 
+
 class Studio(models.Model):
     name = models.CharField(max_length=500, blank=True, null=True)
 
