@@ -26,9 +26,9 @@ class Anime(models.Model):
     premiered = models.CharField(blank=True, null=True, max_length=256) # add choices like Winter Year
     source = models.CharField(blank=True, null=True, max_length=256) # add choices manga, novel, game, whatever
     genres = models.CharField(blank=True, null=True, max_length=256) # also create genres a lot of genres
-    duration = models.DecimalField(blank=True, null=True, decimal_places=2, max_digits=256) # add
-    score = models.IntegerField(blank=True, null=True)
-    image = models.ImageField(verbose_name=None, blank=True, null=True)
+    duration = models.CharField(blank=True, null=True, max_length=256) # add
+    score = models.DecimalField(blank=True, null=True, decimal_places=2, max_digits=10)
+    image = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.name_eng
