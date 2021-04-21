@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
 import PIL
 
 # Create your models here. - model = table in the database
@@ -25,13 +26,15 @@ class Anime(models.Model):
                               , max_length=256, null=True, blank=True)
     premiered = models.CharField(blank=True, null=True, max_length=256) # add choices like Winter Year
     source = models.CharField(blank=True, null=True, max_length=256) # add choices manga, novel, game, whatever
-    genres = models.CharField(blank=True, null=True, max_length=256) # also create genres a lot of genres
+    genres = ArrayField(models.CharField(blank=True, null=True, max_length=256))  # also create genres a lot of genres
     duration = models.CharField(blank=True, null=True, max_length=256) # add
     score = models.DecimalField(blank=True, null=True, decimal_places=2, max_digits=10)
     image = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.name_eng
+
+
 
     # to change plural names on the view
     # class Meta:
